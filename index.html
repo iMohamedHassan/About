@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد حسن - الأسطورة</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #3a3a60);
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background: #ff7b00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff9500;
+            transform: scale(1.1);
+        }
+        .facts {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .facts li {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            animation: popIn 0.5s ease-in-out;
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">محمد حسن - الهكر المبرمج الأسطوري 😎🔥</h1>
+        <p class="subtitle">مش مجرد اسم، ده كيان تقني خارق!</p>
+        <button class="btn" onclick="showFacts()">اكتشف الحقائق</button>
+        <ul class="facts" id="factsList"></ul>
+    </div>
+    <script>
+        function showFacts() {
+            const facts = [
+                "لما اخترعوا الإنترنت، لقوا محمد حسن مستنيه وعامل حساب عليه!",
+                "جوجل بيسأله لما مش بيلاقي إجابة لأي سؤال.",
+                "مفيش سيرفر في العالم يقدر يتحمل قوة الأكواد اللي بيكتبها.",
+                "مرة دخل سيرك، الأسود كانت مربوطة وهوه اللي كان حر!",
+                "أول كلمة قالها وهو بيبي كانت \"sudo hack everything\"!",
+                "الكيبورد بتاعه مفيهوش زرار مسح عشان عمره ما بيغلط!"
+            ];
+            const factsList = document.getElementById("factsList");
+            factsList.innerHTML = "";
+            facts.forEach((fact, index) => {
+                setTimeout(() => {
+                    let li = document.createElement("li");
+                    li.textContent = fact;
+                    factsList.appendChild(li);
+                }, index * 500);
+            });
+        }
+    </script>
+</body>
+</html>
